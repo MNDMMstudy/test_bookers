@@ -12,45 +12,26 @@
     </tr>
   </thead>
   <tbody>
+    <% @lists.each do |list| %>
       <tr>
-        <td>たのしいRuby</td>
-        <td>Rubyの入門におすすめです</td>
-        <td><a class="show_83932" href="https://bookers-level1.herokuapp.com/books/83932">Show</a></td>
-        <td><a class="edit_83932" href="https://bookers-level1.herokuapp.com/books/83932/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_83932" rel="nofollow" data-method="delete" href="https://bookers-level1.herokuapp.com/books/83932">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>アルゴリズム図鑑</td>
-        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
-        <td><a class="show_83934" href="https://bookers-level1.herokuapp.com/books/83934">Show</a></td>
-        <td><a class="edit_83934" href="https://bookers-level1.herokuapp.com/books/83934/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_83934" rel="nofollow" data-method="delete" href="https://bookers-level1.herokuapp.com/books/83934">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>達人プログラマー</td>
-        <td>プログラマ入門者は必読！</td>
-        <td><a class="show_83935" href="https://bookers-level1.herokuapp.com/books/83935">Show</a></td>
-        <td><a class="edit_83935" href="https://bookers-level1.herokuapp.com/books/83935/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_83935" rel="nofollow" data-method="delete" href="https://bookers-level1.herokuapp.com/books/83935">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>データベース実践入門</td>
-        <td>効率的なSQL文を教えてくれます</td>
-        <td><a class="show_83936" href="https://bookers-level1.herokuapp.com/books/83936">Show</a></td>
-        <td><a class="edit_83936" href="https://bookers-level1.herokuapp.com/books/83936/edit">Edit</a></td>
+        <td><%= list.title %></td>
+        <td><%= list.body %></td>
+        <td><a class="" href="">Show</a></td>
+        <td><a class="" href="">Edit</a></td>
         <td><a data-confirm="Are you sure?" class="destroy_83936" rel="nofollow" data-method="delete" href="https://bookers-level1.herokuapp.com/books/83936">Destroy</a></td>
       </tr>
+    <% end %>
   </tbody>
 </table>
 
 
 <h2>New book</h2>
-<%= form_with model: List.new do |f| %>
-<h4>Title</h4>
-<%= f.text_field :title %>
+<%= form_with model: @list, method: :post do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
 
-<h4>Body</h4>
-<%= f.text_area :body %>
+  <h4>Body</h4>
+  <%= f.text_area :body %>
 
-<%= f.submit 'Create Book' %>
+  <%= f.submit 'Create Book' %>
 <% end %>
