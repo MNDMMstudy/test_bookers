@@ -16,7 +16,7 @@
       <tr>
         <td><%= list.title %></td>
         <td><%= list.body %></td>
-        <td><a class="" href="">Show</a></td>
+        <td><%= link_to "Show", "/lists/#{list.id}" %></td>
         <td><a class="" href="">Edit</a></td>
         <td><a data-confirm="Are you sure?" class="destroy_83936" rel="nofollow" data-method="delete" href="https://bookers-level1.herokuapp.com/books/83936">Destroy</a></td>
       </tr>
