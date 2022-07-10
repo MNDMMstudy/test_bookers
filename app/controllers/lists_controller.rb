@@ -1,12 +1,12 @@
 class ListsController < ApplicationController
   def new
-   
+
   end
 
   def create
     list = List.new(list_params)
     list.save
-    redirect_to '/'
+    redirect_to list_path(list.id)
   end
 
   def index
