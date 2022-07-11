@@ -1,7 +1,15 @@
+<% if flash[:notice] %>
+     <p>
+       Book was successfully created.
+     </p>
+   <% end %>
+
 <h2>Title</h2>
 <p><%= @list.title %></p>
 
 <h2>Body</h2>
 <p><%= @list.body %></p>
 
- 
+<a><%= link_to "Edit",edit_list_path(@list.id) %></a>
+<a>|</a>
+<a><%= link_to "Back",'/books' %></a>
