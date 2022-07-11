@@ -18,7 +18,7 @@
         <td><%= list.body %></td>
         <td><%= link_to "Show", list_path(list.id) %></td>
         <td><%= link_to "Edit",edit_list_path(list.id) %></td>
-        <td><a data-confirm="Are you sure?" class="destroy_83936" rel="nofollow" data-method="delete" href="https://bookers-level1.herokuapp.com/books/83936">Destroy</a></td>
+        <td><%= link_to "Destroy", destroy_list_path(list.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
       </tr>
     <% end %>
   </tbody>
