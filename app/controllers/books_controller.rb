@@ -26,14 +26,14 @@ class BooksController < ApplicationController
   end
 
   def update
-    flash[:notice] = "successfully"
+    flash[:notice] = "Book was successfully updated."
     book = Book.find(params[:id])
     book.update(book_params)
     redirect_to book_path(book.id)
   end
 
   def destroy
-   flash[:notice] = "successfully"
+   flash[:notice] = " Book was successfully destroyed."
    book = Book.find(params[:id])
    book.destroy
    redirect_to '/books'
