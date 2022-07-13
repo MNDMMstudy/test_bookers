@@ -10,6 +10,4 @@
 <h2>Body</h2>
 <p><%= @book.body %></p>
 
-<a><%= link_to "Edit",edit_book_path(@book.id) %></a>
-<a>|</a>
-<a><%= link_to "Back",'/books' %></a>
+<%= link_to "Edit",edit_book_path(@book.id) %>|<%= link_to "Back",'/books' %>
